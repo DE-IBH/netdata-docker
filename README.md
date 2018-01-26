@@ -1,4 +1,4 @@
-# netdata
+# netdata - real-time charts for system monitoring
 
 These are docker images for [netdata](http://my-netdata.io/) based
 on the official *Debian GNU/Linux* or *Alpine Linux* packages.
