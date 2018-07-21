@@ -8,7 +8,7 @@ on the official *Debian GNU/Linux* or *Alpine Linux* packages.
 
 Images are tagged according to the installed netdata version.
 
-* [`1.9.0`, `latest` Dockerfile](https://github.com/DE-IBH/netdata-docker/blob/master/netdata-1.9.0-alpine/Dockerfile)
+* [`1.10.0`, `latest` Dockerfile](https://github.com/DE-IBH/netdata-docker/blob/master/netdata-1.10.0-alpine/Dockerfile)
 
   [![Layers](https://images.microbadger.com/badges/image/ibhde/netdata:latest.svg)](https://images.microbadger.com/badges/image/ibhde/netdata:latest)
 
@@ -18,6 +18,24 @@ Images are tagged according to the installed netdata version.
 
 ## Usage
 
+### docker run
+
 ```
 $ docker run -it -v /sys:/host/sys:ro -v /proc:/host/proc:ro -p 19999:19999 ibhde/netdata
+```
+
+### docker-compose
+
+```
+# docker-compose.yml example
+version: '3'
+services:
+  netdata:
+    image: ibhde/netdata:1.6.0
+    network_mode: host
+    hostname: MY-HOSTNAME
+    restart: always
+    volumes:
+      - /sys:/host/sys:ro
+      - /proc:/host/proc:ro
 ```
